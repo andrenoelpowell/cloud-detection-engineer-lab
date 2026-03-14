@@ -19,19 +19,36 @@ This repository tracks my path toward becoming a Cloud Detection Engineer.
 ---
 
 ## Detection Engineering Approach
+
 Each detection rule in this repository follows a structured workflow used by detection engineers.
 
-Telemetry Source
-Example: AWS CloudTrail logs recording IAM API activity
-        ↓
-Attacker Behavior
-Example: attacker creates new IAM user
-        ↓
-MITRE ATT&CK Technique
-Example: T1136 – Create Account
-        ↓
-Detection Rule
-Example: alert on CreateUser event
-        ↓
-Investigation Playbook
-Example: review actor, IP, permissions
+### 1. Telemetry Source
+Example:
+- AWS CloudTrail logs recording IAM API activity
+
+↓
+
+### 2. Attacker Behavior
+Example:
+- Attacker creates a new IAM user to maintain persistence
+
+↓
+
+### 3. MITRE ATT&CK Technique
+Example:
+- T1136 – Create Account
+
+↓
+
+### 4. Detection Rule
+Example:
+- Alert when a CloudTrail event with `eventName = CreateUser` occurs
+
+↓
+
+### 5. Investigation Playbook
+Example:
+- Identify the actor who created the IAM user  
+- Review the source IP address  
+- Check permissions attached to the account  
+- Verify whether the action was authorized
