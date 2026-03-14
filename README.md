@@ -16,3 +16,13 @@ This repository tracks my path toward becoming a Cloud Detection Engineer.
 - `automation/` Python scripts
 - `lab/` cloud detection lab design
 - `terraform/` infrastructure as code
+
+## Detection Engineering Approach
+
+Each detection rule in this repository follows a structured workflow:
+
+Telemetry Source
+→ Attacker Behavior
+→ MITRE ATT&CK Technique
+→ Detection Rule
+→ Investigation Playbook
