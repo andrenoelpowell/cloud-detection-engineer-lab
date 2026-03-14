@@ -60,3 +60,26 @@ Attackers may disable logging to hide their activity.
 
 Detection Idea:
 Alert whenever DeleteTrail is executed.
+
+## Example CloudTrail Event
+
+Example IAM user creation event:
+
+{
+  "eventTime": "2024-03-15T12:21:45Z",
+  "eventSource": "iam.amazonaws.com",
+  "eventName": "CreateUser",
+  "userIdentity": {
+    "type": "IAMUser",
+    "userName": "admin-user"
+  },
+  "sourceIPAddress": "203.0.113.10",
+  "awsRegion": "us-east-1"
+}
+
+Important fields for detection:
+
+eventName → action performed  
+userIdentity.userName → who performed it  
+sourceIPAddress → where request came from  
+eventTime → when it occurred
